@@ -52,6 +52,18 @@ npm run build
 npm run preview
 ```
 
+## Публикация на GitHub Pages
+
+Собранная версия лежит в ветке `gh-pages`, в `vite.config.ts` задан `base: '/green-api-chat/'`.
+Обновление публикации:
+
+```bash
+npm run build
+git worktree add /tmp/ghp gh-pages
+cp -R dist/. /tmp/ghp/
+cd /tmp/ghp && git add -A && git commit -m "publish build" && git push
+```
+
 ## Как пользоваться
 
 1. Ввести `apiUrl`, `idInstance` и `apiTokenInstance`, нажать «Подключиться».
